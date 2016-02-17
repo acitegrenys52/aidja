@@ -9,7 +9,3 @@ class Circle(models.Model):
 
     def __str__(self):
         return self.name
-
-    def save(self):
-        print(self)
-        return None
