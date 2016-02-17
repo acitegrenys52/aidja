@@ -7,7 +7,6 @@ from aiopg.sa import create_engine
 from aidja.settings import DATABASES
 
 db = DATABASES['default']
-
 metadata = sa.MetaData()
 
 circle = sa.Table(
