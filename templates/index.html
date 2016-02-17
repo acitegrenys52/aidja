@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<script>
+    var ws = new WebSocket('ws://127.0.0.1:8080/echo');
+    var send = function (form) {
+
+        var circle = JSON.stringify({
+            'name': form.name.value,
+            'color': form.color.value,
+            'x': form.x.value,
+            'y': form.y.value
+        });
+        for (i=0; i<1000; i++)
+        ws.send(circle);
+    }
+</script>
+<form onsubmit="send(this);">
+    <label>Name:<input type="text" name="name" value="Boomer"></label> <br/>
+    <label>Color: <input type="color" name="color" value="#FF0000"></label><br/>
+    <label>X: <input type="text" name="x" value="220"></label><br/>
+    <label>Y: <input type="text" name="y" value="23"></label><br/>
+    <input type="submit" value="Send">
+</form>
+
+</body>
+</html>
