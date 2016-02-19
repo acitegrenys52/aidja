@@ -15,7 +15,9 @@
             'x': form.x.value,
             'y': form.y.value
         });
-        ws.send(circle);
+        for (var i = 0; i < form.how.value; i++) {
+            ws.send(circle);
+        }
     }
 </script>
 <form action="javascript:void()" onsubmit="send(this);">
@@ -23,6 +25,7 @@
     <label>Color: <input type="color" name="color" value="#FF0000"></label><br/>
     <label>X: <input type="text" name="x" value="220"></label><br/>
     <label>Y: <input type="text" name="y" value="23"></label><br/>
+    <label>How create: <input type="text" name="how" value="1000"></label><br/>
     <input type="submit" value="Send">
 </form>
 
